@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "server": "node index.js",
     "dev": "nodemon index.js"
   },
