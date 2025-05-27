@@ -1,0 +1,364 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply text-neutral-800 dark:text-neutral-100 antialiased;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif leading-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-600 hover:bg-secondary-700 text-white;
+  }
+
+  .btn-outline {
+    @apply border border-neutral-300 hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-neutral-100 dark:hover:bg-neutral-800;
+  }
+
+  .card {
+    @apply bg-white dark:bg-neutral-800 rounded-lg shadow-sm hover:shadow transition-shadow duration-200;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 border border-neutral-300 dark:border-neutral-700 rounded-md
+    bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100
+    focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .tag-primary {
+    @apply bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-100;
+  }
+
+  .tag-secondary {
+    @apply bg-secondary-100 text-secondary-800 dark:bg-secondary-900 dark:text-secondary-100;
+  }
+
+  .tag-accent {
+    @apply bg-accent-100 text-accent-800 dark:bg-accent-900 dark:text-accent-100;
+  }
+}
+
+.segment-editor {
+  @apply prose dark:prose-invert max-w-none;
+}
+
+.segment-content {
+  @apply prose dark:prose-invert max-w-none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400 dark:bg-neutral-500;
+}
+
+/* Enhanced typography for reading experience */
+.prose-reading {
+  @apply text-base leading-relaxed;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.7;
+}
+
+.prose-reading h1,
+.prose-reading h2,
+.prose-reading h3,
+.prose-reading h4,
+.prose-reading h5,
+.prose-reading h6 {
+  @apply font-serif font-bold;
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.prose-reading h1 {
+  @apply text-3xl;
+}
+
+.prose-reading h2 {
+  @apply text-2xl;
+}
+
+.prose-reading h3 {
+  @apply text-xl;
+}
+
+.prose-reading p {
+  margin-bottom: 1.5em;
+}
+
+.prose-reading blockquote {
+  @apply border-l-4 border-primary-500 pl-6 py-2 my-6 bg-primary-50/30 dark:bg-primary-900/10 rounded-r-lg;
+  font-style: italic;
+}
+
+.prose-reading code {
+  @apply bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-sm;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+}
+
+.prose-reading pre {
+  @apply bg-neutral-100 dark:bg-neutral-800 p-4 rounded-lg overflow-x-auto;
+}
+
+.prose-reading ul,
+.prose-reading ol {
+  @apply my-6 pl-6;
+}
+
+.prose-reading li {
+  @apply mb-2;
+}
+
+.prose-reading a {
+  @apply text-primary-600 dark:text-primary-400 no-underline hover:underline;
+  transition: color 0.2s ease;
+}
+
+.prose-reading strong {
+  @apply text-neutral-900 dark:text-white font-semibold;
+}
+
+.prose-reading em {
+  @apply italic;
+}
+
+/* Medium-style reading layout */
+.reading-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Segment navigation improvements */
+.segment-nav-item {
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.segment-nav-item.active {
+  @apply border-l-primary-500 bg-primary-50 dark:bg-primary-900/20;
+}
+
+.segment-nav-item:hover {
+  @apply bg-neutral-50 dark:bg-neutral-700/50;
+}
+
+/* Writing mode styles */
+.writing-mode {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+.writing-mode .prose {
+  @apply text-neutral-100;
+}
+
+.writing-mode .prose h1,
+.writing-mode .prose h2,
+.writing-mode .prose h3 {
+  @apply text-white;
+}
+
+.writing-mode .prose code {
+  @apply bg-neutral-700 text-neutral-200;
+}
+
+/* Improved focus styles */
+.focus-within-ring:focus-within {
+  @apply ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-neutral-800;
+}
+
+/* Color-coded tag animations */
+.tag-animated {
+  transition: all 0.2s ease;
+}
+
+.tag-animated:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom line clamp utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enhanced typography for reading experience */
+.prose-reading {
+  @apply text-base leading-relaxed;
+  font-family: Georgia, 'Times New Roman', serif;
+  line-height: 1.7;
+}
+
+.prose-reading h1,
+.prose-reading h2,
+.prose-reading h3,
+.prose-reading h4,
+.prose-reading h5,
+.prose-reading h6 {
+  @apply font-serif font-bold;
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.prose-reading h1 {
+  @apply text-3xl;
+}
+
+.prose-reading h2 {
+  @apply text-2xl;
+}
+
+.prose-reading h3 {
+  @apply text-xl;
+}
+
+.prose-reading p {
+  margin-bottom: 1.5em;
+}
+
+.prose-reading blockquote {
+  @apply border-l-4 border-primary-500 pl-6 py-2 my-6 bg-primary-50/30 dark:bg-primary-900/10 rounded-r-lg;
+  font-style: italic;
+}
+
+.prose-reading code {
+  @apply bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-sm;
+  font-family: 'SF Mono', Monaco, Consolas, monospace;
+}
+
+.prose-reading pre {
+  @apply bg-neutral-100 dark:bg-neutral-800 p-4 rounded-lg overflow-x-auto;
+}
+
+.prose-reading ul,
+.prose-reading ol {
+  @apply my-6 pl-6;
+}
+
+.prose-reading li {
+  @apply mb-2;
+}
+
+.prose-reading a {
+  @apply text-primary-600 dark:text-primary-400 no-underline hover:underline;
+  transition: color 0.2s ease;
+}
+
+.prose-reading strong {
+  @apply text-neutral-900 dark:text-white font-semibold;
+}
+
+.prose-reading em {
+  @apply italic;
+}
+
+/* Medium-style reading layout */
+.reading-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Segment navigation improvements */
+.segment-nav-item {
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.segment-nav-item.active {
+  @apply border-l-primary-500 bg-primary-50 dark:bg-primary-900/20;
+}
+
+.segment-nav-item:hover {
+  @apply bg-neutral-50 dark:bg-neutral-700/50;
+}
+
+/* Writing mode styles */
+.writing-mode {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+}
+
+.writing-mode .prose {
+  @apply text-neutral-100;
+}
+
+.writing-mode .prose h1,
+.writing-mode .prose h2,
+.writing-mode .prose h3 {
+  @apply text-white;
+}
+
+.writing-mode .prose code {
+  @apply bg-neutral-700 text-neutral-200;
+}
+
+/* Improved focus styles */
+.focus-within-ring:focus-within {
+  @apply ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-neutral-800;
+}
+
+/* Color-coded tag animations */
+.tag-animated {
+  transition: all 0.2s ease;
+}
+
+.tag-animated:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom line clamp utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
