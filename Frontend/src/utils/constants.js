@@ -1,5 +1,5 @@
 // API base URL
-export const API_URL = 'http://localhost:5001/api';
+export const API_URL = 'https://threadspire-z768.onrender.com/api';
 
 // Reaction types
 export const REACTION_TYPES = {
