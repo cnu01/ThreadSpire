@@ -80,7 +80,10 @@ function LoginForm() {
           required
         />
       </div>
-      
+      <div>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">test1@a.com/test@a.com</p>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">123456</p>
+      </div>
       <div>
         <button
           type="submit"
